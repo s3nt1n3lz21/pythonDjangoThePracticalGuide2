@@ -5,10 +5,15 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>{{ text | title }} Challenge</title>
+    <title>{{ month_name | title }} Challenge</title>
 </head>
 <body>
-    <h1>{{ text | title }}'s Challenge</h1>
-    <h2>{{ text | title }} Challenge Description</h2>
+    <h1>{{ month_name | title }}'s Challenge</h1>
+    {% if text is not None %}
+    <h2> Challenge Description</h2>
+    <p>{{ text }}</p>
+    {% else %}
+    <p>There is no challenge for this month yet!</p>
+    {% endif %}
 </body>
 </html>
